@@ -322,11 +322,9 @@ section:nth-of-type(odd) {
     color: var(--text-secondary);
     max-width: 800px; /* Limit line length for readability */
     margin: 0 auto;
-    text-align: justify;
+    text-align: left; /* Default alignment for mobile */
     line-height: 1.8;
-    text-wrap: pretty; /* Balances text lines to avoid orphans */
 }
-
 
 /* Sustainable Solutions Section - Simplified */
 .sustainable-content {
@@ -892,5 +890,20 @@ section:nth-of-type(odd) {
     }
     .contact-info, .phone-number, .phone-icon {
         font-size: 1.3rem;
+    }
+}
+
+/* Responsive Design */
+
+@media (min-width: 768px) {
+    .section-description, .waste-management-intro p, .industrial-intro p {
+        text-align: justify;
+        text-wrap: pretty;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
     }
 }

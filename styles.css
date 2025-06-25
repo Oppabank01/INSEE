@@ -353,35 +353,40 @@ section:nth-of-type(odd) {
 
 /* Other Services Section - Simplified */
 .explore-solutions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: -20px;
+    margin-top: 15px;
+    text-align: center;
 }
 
 .explore-text {
     font-size: 1.1rem;
     color: var(--text-secondary);
+    margin-bottom: 10px;
 }
 
 .explore-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    display: inline-block;
+    padding: 12px 28px;
+    border: 2px solid var(--insee-green);
+    border-radius: 50px;
     color: var(--insee-green);
     text-decoration: none;
     font-weight: 700;
+    font-family: 'INSEE Display', sans-serif;
     transition: var(--transition-normal);
+    background-color: transparent;
 }
 
 .explore-link:hover {
-    color: var(--insee-green-dark);
-    text-decoration: underline;
+    background-color: var(--insee-green);
+    color: var(--insee-white);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
 }
 
 .arrow-icon {
-    transition: var(--transition-normal);
+    display: inline-block;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
 }
 
 .explore-link:hover .arrow-icon {

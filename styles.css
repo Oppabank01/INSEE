@@ -322,8 +322,9 @@ section:nth-of-type(odd) {
     color: var(--text-secondary);
     max-width: 800px; /* Limit line length for readability */
     margin: 0 auto;
-    text-align: left; /* Default alignment for mobile */
+    text-align: center; /* Center text on mobile by default */
     line-height: 1.8;
+    text-wrap: balance; /* Prevents orphans on centered text */
 }
 
 /* Sustainable Solutions Section - Simplified */
@@ -914,7 +915,7 @@ section:nth-of-type(odd) {
 
 @media (min-width: 768px) {
     .section-description, .waste-management-intro p, .industrial-intro p {
-        text-align: justify;
+        text-align: justify; /* Justify text on larger screens */
         text-wrap: pretty;
     }
 }

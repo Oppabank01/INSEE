@@ -416,11 +416,12 @@ section:nth-of-type(odd) {
 }
 
 .service-card-header {
-    padding: 25px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
     border-bottom: 1px solid var(--border-color);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .service-icon {

@@ -429,18 +429,21 @@ section:nth-of-type(odd) {
     width: 64px;
     height: 64px;
     background: var(--insee-green);
-    color: var(--insee-white);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     transition: var(--transition-normal);
+    overflow: hidden;
 }
 
-.service-icon i {
-    font-size: 2rem;
-    line-height: 1;
+.service-img-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+    filter: brightness(0) invert(1); /* Make icon white */
 }
 
 .service-card:hover .service-icon {

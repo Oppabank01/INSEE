@@ -424,10 +424,26 @@ section:nth-of-type(odd) {
 }
 
 .service-icon {
-    font-size: 2.5rem; /* Adjust size of the icon */
-    color: var(--insee-green);
-    margin-bottom: 15px;
+    width: 64px;
+    height: 64px;
+    background: var(--insee-green);
+    color: var(--insee-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition-normal);
+}
+
+.service-icon i {
+    font-size: 2rem;
     line-height: 1;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 166, 84, 0.25);
 }
 
 .service-title {

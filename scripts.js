@@ -131,3 +131,50 @@
 
     window.addEventListener('DOMContentLoaded', startSlider);
 })();
+
+// Back to top button functionality
+const backtopButton = document.getElementById('backtop');
+let isScrolling = false;
+
+// Show/hide button based on scroll position with throttling
+window.addEventListener('scroll', () => {
+    if (!isScrolling) {
+        window.requestAnimationFrame(() => {
+            if (window.scrollY > 300) {
+                backtopButton.classList.add('show');
+            } else {
+                backtopButton.classList.remove('show');
+            }
+            isScrolling = false;
+        });
+        isScrolling = true;
+    }
+});
+
+// Smooth scroll to top with easing
+backtopButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    const duration = 800; // Duration in milliseconds
+    const start = window.scrollY;
+    const startTime = performance.now();
+
+    function easeInOutCubic(t) {
+        return t < 0.5 
+            ? 4 * t * t * t 
+            : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    function scrollStep(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        window.scrollTo(0, start * (1 - easeInOutCubic(progress)));
+
+        if (progress < 1) {
+            window.requestAnimationFrame(scrollStep);
+        }
+    }
+
+    window.requestAnimationFrame(scrollStep);
+});

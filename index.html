@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome 6 CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 <body>
     <!-- Header -->
@@ -61,27 +62,40 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="container">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        INSEE Ecocycle Sustainable Waste Management and Innovative Industrial Services
-                    </h1>
-                    <p class="hero-description">
-                        We provide sustainable waste management solutions to help achieve your sustainability goals, along with innovative industrial services that support every stage of a project's lifecycle from commissioning and operation to decommissioning
-                    </p>
-                    <a href="https://www.siamcitycement.com/thailand/inseeecocycle/en/home" class="btn btn-primary">Explore More About Us</a>
-                </div>
-            </div>
+      <div class="swiper hero-banner">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="#" class="link">
+              
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#" class="link">
+              
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#" class="link">
+              
+            </a>
+          </div>
         </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <!-- Overlay text for hero section -->
+      <div class="hero-overlay-content right">
+        <h1 class="hero-title">Sustainable Waste Management Solutions</h1>
+        <p class="hero-description">Leading provider of sustainable waste management and industrial services</p>
+      </div>
+
     </section>
 
     <!-- Sustainable Solutions Section -->
-    <section id="sustainability" class="sustainable-section">
+    <section id="sustainability" class="sustainable-section green-section">
         <div class="container">
             <div class="sustainable-content">
                 <div>
-                    <img src="image/sustainable solution.jpg" alt="Sustainable Solutions" class="sustainable-img">
+                    <img src="image/sustainable solution.png" alt="Sustainable Solutions" class="sustainable-img">
                 </div>
                 <div>
                     <p class="section-description">
@@ -96,308 +110,339 @@
         </div>
     </section>
 
-    <!-- Waste Management Section -->
-    <section id="services" class="waste-management-section">
-        <div class="container">
-            <div class="waste-management-header">
-                <h2 class="section-title">Waste Management</h2>
-            </div>
-            
-            <div class="waste-management-intro">
-                <p>
-                    INSEE Ecocycle delivers expert waste management solutions for a wide range of industrial sectors, using co-processing technology to transform waste into alternative fuels and raw materials for cement kilns. This process replaces fossil fuels like coal, lowering overall carbon emissions. Co-processing safely treats waste at high temperatures, leaving no residual ash and achieving zero waste to landfill.
-                    <br>
-                    <br>
-                    To address growing waste challenges, INSEE Ecocycle has also pioneered energy recovery from Municipal Solid Waste (MSW), including mining dumpsites for combustible materials such as plastic to produce Refuse-Derived Fuel (RDF). This approach recovers valuable resources, extends landfill lifespans, and helps prevent plastic waste from leaking into oceans and water sources.
-                </p>
-            </div>
+    <!-- Waste Management Section (ใหม่) -->
+    <section class="services-solutions-section">
+      <div class="container">
+        <div class="services-solutions-cardbox">
+          <div class="services-solutions-cardbox-image">
+            <img src="https://siamcitycement.com/ckeditor/upload/files/1745315727__DSC3267%20(1).jpg" alt="Industrial Storage Tanks" />
+          </div>
+          <div class="services-solutions-cardbox-content">
+            <span class="services-solutions-label">SERVICES & SOLUTIONS</span>
+            <h2 class="services-solutions-title">Explore our Services & Solutions</h2>
+            <p class="services-solutions-desc">
+              We offer sustainable waste management solutions and innovative industrial services to support your sustainability goals and operational efficiency. Our solutions ensure the safe and assured destruction of waste, help industrial clients meet regulatory compliance, and effectively manage complex waste streams. From responsible waste treatment to specialized industrial services, we support every stage of a project’s lifecycle, including commissioning, operation, and decommissioning. Throughout each phase, we deliver safety, reliability, and strong environmental performance.
+            </p>
+          </div>
         </div>
+        <!-- 3 cards ด้านล่าง (คงเดิม) -->
+        <div class="services-solutions-cards">
+          <div class="services-solutions-card">
+            <img src="background/main1.jpg" alt="Waste Analysis and Laboratory Services" />
+            <div class="card-label green">Sustainable Integrated Waste Management Service</div>
+            <div class="card-title">Sustainable Integrated Waste Management Service</div>
+            <a href="#" class="card-btn">Learn More <span class="arrow">&rarr;</span></a>
+          </div>
+          <div class="services-solutions-card">
+            <img src="background/main2.jpg" alt="Shutdown & Turnaround Service" />
+            <div class="card-label yellow">Specialized Industrial Services Across the Project Lifecycle</div>
+            <div class="card-title">Shutdown and Turnaround Service</div>
+            <a href="#" class="card-btn">Learn More <span class="arrow">&rarr;</span></a>
+          </div>
+          <div class="services-solutions-card" id="other-services-solutions">
+            <img src="background/main3.jpg" alt="Disinfection service" />
+            <div class="card-label blue">OTHER SERVICES &amp; SOLUTIONS</div>
+            <div class="card-title">Explore Our Solutions</div>
+            <a href="https://siamcitycement.com/thailand/inseeecocycle/en/home" class="card-btn">
+             Learn More <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
+    <!-- Waste Management Section (ใหม่) end -->
 
     <!-- Industrial Services Section -->
     <section id="services" class="industrial-section">
-        <div class="container">
-            <div class="industrial-header">
-                <h2 class="industrial-section-title">Industrial Services</h2>
+      <div class="container">
+        <div class="industrial-cardbox">
+          <div class="industrial-cardbox-content">
+            <span class="wm-label-green">WASTE MANAGEMENT</span>
+            <h3 class="wm-title">Sustainable Integrated Waste Management Service</h3>
+            <div class="industrial-desc">
+              INSEE Ecocycle delivers expert waste management solutions for a wide range of 
+              industrial sectors, using co-processing technology to transform waste into alternative 
+              fuels and raw materials for cement kilns. This process replaces fossil fuels like coal, 
+              lowering overall carbon emissions. Co-processing safely treats waste at high 
+              temperatures, leaving no residual ash and achieving zero waste to landfill.<br><br>
+               To address growing waste challenges, INSEE Ecocycle has also pioneered energy 
+              recovery from Municipal Solid Waste (MSW), including mining dumpsites for 
+              combustible materials such as plastic to produce Refuse-Derived Fuel (RDF). This 
+              approach recovers valuable resources, extends landfill lifespans, and helps prevent 
+              plastic waste from leaking into oceans and water sources.
             </div>
-            
-            <div class="industrial-intro">
-                <p>
-                    INSEE Ecocycle specializes in industrial cleaning services, particularly for the oil & gas, petrochemical, and power generation sectors, covering the entire project lifecycle, from commissioning and operation to maintenance and decommissioning. Our innovative solutions include robotic tank cleaning and the safe removal of contaminants from decommissioned assets. With proven expertise, we also handle all waste generated from industrial cleaning in a fully compliant and environmentally responsible manner.
-                </p>
-            </div>
+          </div>
+          <div class="industrial-cardbox-image">
+            <img src="background/main2.jpg" alt="Industrial Service" />
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Other Services & Solutions Section -->
-    <section class="other-services-section">
-        <div class="container">
-            <div class="other-services-header">
-                <h2 class="section-title">Other Services & Solutions</h2>
-                <div class="explore-solutions">
-                    <p class="explore-text">Explore Our Solutions</p>
-                    <a href="https://www.siamcitycement.com/thailand/inseeecocycle/en/home" class="explore-link">
-                        Click to main website
-                        <span class="arrow-icon">→</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="services-grid">
-                <!-- Waste Management Services -->
-                <div class="service-card">
-                    <div class="service-card-header">
-                        <div class="service-icon">
-                            <img src="icons/recycle_icons.png" alt="Recycle Icon" class="service-img-icon">
-                        </div>
-                    </div>
-                    <div class="service-card-content">
-                        <h3 class="service-title">Waste Management Services</h3>
-                        <ul class="service-list">
-                            <li>Waste Treatment and Destruction</li>
-                            <li>Waste Analysis and Laboratory Services</li>
-                            <li>Waste Collection and Transportation</li>
-                            <li>Secure Destruction</li>
-                            <li>Soil and Groundwater Remediation</li>
-                            <li>Consulting and Field Services</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Industrial Services -->
-                <div class="service-card">
-                    <div class="service-card-header">
-                        <div class="service-icon">
-                            <img src="icons/industry_icons.png" alt="Industry Icon" class="service-img-icon">
-                        </div>
-                    </div>
-                    <div class="service-card-content">
-                        <h3 class="service-title">Industrial Services</h3>
-                        <ul class="service-list">
-                            <li>Shutdown & Turnaround Service</li>
-                            <li>Chemical Cleaning</li>
-                            <li>Mechanical Cleaning</li>
-                            <li>Decontamination</li>
-                            <li>Decommissioning</li>
-                            <li>Tank Cleaning</li>
-                            <li>Catalyst Handling</li>
-                            <li>Mechanical Works</li>
-                            <li>Pipeline & Process Services</li>
-                            <li>Skilled Manpower Supply</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Additional Services -->
-                <div class="service-card">
-                    <div class="service-card-header">
-                        <div class="service-icon">
-                            <img src="icons/cog_icons.png" alt="Cog Icon" class="service-img-icon">
-                        </div>
-                    </div>
-                    <div class="service-card-content">
-                        <h3 class="service-title">Additional Services</h3>
-                        <ul class="service-list">
-                            <li>Activated Carbon</li>
-                            <li>Food Waste Composter</li>
-                            <li>Disinfection service</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <!-- Section: Specialized Industrial Services Across the Project Lifecycle -->
+    <div class="container">
+      <section class="industrial-services-section">
+        <img class="industrial-services-img" src="https://siamcitycement.com//upload/prod-serv/real/pic-202308041680898540_81565_25-86.jpg" alt="Oil & Gas Industry" style="border-radius:0;" />
+        <div class="industrial-services-content">
+          <span class="industrial-services-label wm-label-green">INDUSTRIAL SERVICES</span>
+          <div class="industrial-services-title">Specialized Industrial Services Across the Project Lifecycle</div>
+          <div class="industrial-services-desc">
+            INSEE Ecocycle specializes in industrial cleaning services, particularly for the oil & gas, petrochemical, and power generation sectors, covering the entire project lifecycle, from commissioning and operation to maintenance and decommissioning. Our innovative solutions include robotic tank cleaning and the safe removal of contaminants from decommissioned assets. With proven expertise, we also handle all waste generated from industrial cleaning in a fully compliant and environmentally responsible manner.
+          </div>
         </div>
+      </section>
+    </div>
+
+    <!-- Other Services & Solutions Section (Modern 4 Cards) -->
+    <div class="container">
+      <div class="service-cards-header" style="margin-bottom: 32px;">
+        <h2 class="service-cards-title">Explore Our Solutions</h2>
+        <a href="#" class="main-website-btn">Click to main website <span class="arrow">&rarr;</span></a>
+      </div>
+      <div class="service-cards-modern-grid">
+        <div class="service-card-modern2">
+          <div class="service-card-modern2-icon">
+            <img src="icons/recycle_icons.png" alt="Recycle Icon" />
+          </div>
+          <div class="service-card-modern2-title">Waste Management Services</div>
+          <ul class="service-card-modern2-list">
+            <li>Waste Treatment and Destruction</li>
+            <li>Waste Analysis and Laboratory Services</li>
+            <li>Waste Collection and Transportation</li>
+            <li>Secure Destruction</li>
+            <li>Soil and Groundwater Remediation</li>
+            <li>Consulting and Field Services</li>
+          </ul>
+        </div>
+        <div class="service-card-modern2">
+          <div class="service-card-modern2-icon">
+            <img src="icons/industry_icons.png" alt="Industry Icon" />
+          </div>
+          <div class="service-card-modern2-title">Industrial Services</div>
+          <ul class="service-card-modern2-list">
+            <li>Shutdown & Turnaround Service</li>
+            <li>Chemical Cleaning</li>
+            <li>Mechanical Cleaning</li>
+            <li>Decontamination</li>
+            <li>Decommissioning</li>
+            <li>Tank Cleaning</li>
+            <li>Catalyst Handling</li>
+            <li>Mechanical Works</li>
+            <li>Pipeline & Process Services</li>
+            <li>Skilled Manpower Supply</li>
+          </ul>
+        </div>
+        <div class="service-card-modern2">
+          <div class="service-card-modern2-icon">
+            <img src="icons/cog_icons.png" alt="Cog Icon" />
+          </div>
+          <div class="service-card-modern2-title">Additional Services</div>
+          <ul class="service-card-modern2-list">
+            <li>Activated Carbon</li>
+            <li>Food Waste Composter</li>
+            <li>Disinfection service</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Expertise Section (Redesigned Reference Style) -->
+    <div class="container">
+      <div class="expertise-ref-grid">
+        <div class="expertise-ref-card">
+          <div class="expertise-ref-icon"><span>🎓</span></div>
+          <div class="expertise-ref-content">
+            <div class="expertise-ref-title">EXPERTS</div>
+            <div class="expertise-ref-underline"></div>
+            <div class="expertise-ref-desc">
+              We are committed to creating a positive, sustainable future. We leverage our knowledge to create clean and waste management processes that help us achieve greater sustainability.
+            </div>
+          </div>
+        </div>
+        <div class="expertise-ref-card">
+          <div class="expertise-ref-icon"><span>🔬</span></div>
+          <div class="expertise-ref-content">
+            <div class="expertise-ref-title">SPECIALISTS</div>
+            <div class="expertise-ref-underline"></div>
+            <div class="expertise-ref-desc">
+              We offer our customers a wide range of specialist industrial services. We manage residuals and hazardous waste generated from cleaning processes in a sustainable manner within full compliance with all regulatory requirements.
+            </div>
+          </div>
+        </div>
+        <div class="expertise-ref-card">
+          <div class="expertise-ref-icon"><span>🤝</span></div>
+          <div class="expertise-ref-content">
+            <div class="expertise-ref-title">SERVICE DRIVEN</div>
+            <div class="expertise-ref-underline"></div>
+            <div class="expertise-ref-desc">
+              Our team is committed to partners by offering quality driven operations. We deliver the highest quality work and ensure complete customer satisfaction by constantly improving our services.
+            </div>
+          </div>
+        </div>
+        <div class="expertise-ref-card">
+          <div class="expertise-ref-icon"><span>🛡️</span></div>
+          <div class="expertise-ref-content">
+            <div class="expertise-ref-title">SAFETY LEADERS</div>
+            <div class="expertise-ref-underline"></div>
+            <div class="expertise-ref-desc">
+              Safety is of paramount importance to us. We believe that Zero Harm is attainable and strive to build the most efficient organization. Safety leadership is critical to our Zero Harm culture. We continuously conduct specialized safety leadership development programs while all INSEE Ecocycle employees are mentored to drive our health and safety performance with passion, energy and a clear vision.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brochure Download Section (ตามภาพ) -->
+    <section class="brochure-download-section">
+      <div class="container brochure-flex">
+        <div class="brochure-image-col">
+          <img src="image/download.png" alt="INSEE Ecocycle Brochure" class="brochure-img" />
+        </div>
+        <div class="brochure-content-col">
+          <h2 class="brochure-title">INSEE ECOCYCLE</h2>
+          <a href="download/Ecocycle_Corporate_Brochure_CN.pdf" class="brochure-download-btn" download target="_blank">
+            DOWNLOAD BROCHURE <span class="pdf-icon">PDF</span>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <!-- Download Brochure Section -->
-    <section class="download-brochure-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Why Choose INSEE Ecocycle</h2>
-                <div class="download-cta">
-                    <button class="download-btn">
-                        Download Brochure
-                    </button>
-                </div>
-            </div>
-            
-            <div class="expertise-grid">
-                <!-- Experts Card -->
-                <div class="expertise-card experts-card">
-                    <div class="card-header">
-                        <div class="expertise-icon">
-                            <div class="icon-wrapper experts-icon">
-                                🎓
-                            </div>
-                        </div>
-                        <h3 class="expertise-title">Experts</h3>
-                    </div>
-                    <div class="card-content">
-                        <p class="expertise-description">
-                            We are committed to creating a positive, sustainable future. We leverage our knowledge to create clean and waste management processes that help us achieve greater sustainability.
-                        </p>
-                    </div>
-                    <div class="card-accent experts-accent"></div>
-                </div>
-                
-                <!-- Specialists Card -->
-                <div class="expertise-card specialists-card">
-                    <div class="card-header">
-                        <div class="expertise-icon">
-                            <div class="icon-wrapper specialists-icon">
-                                🔬
-                            </div>
-                        </div>
-                        <h3 class="expertise-title">Specialists</h3>
-                    </div>
-                    <div class="card-content">
-                        <p class="expertise-description">
-                            We offer our customers a wide range of specialist industrial services. We manage residuals and hazardous waste generated from cleaning processes in a sustainable manner within full compliance with all regulatory requirements.
-                        </p>
-                    </div>
-                    <div class="card-accent specialists-accent"></div>
-                </div>
-                
-                <!-- Service Driven Card -->
-                <div class="expertise-card service-card">
-                    <div class="card-header">
-                        <div class="expertise-icon">
-                            <div class="icon-wrapper service-icon">
-                                🤝
-                            </div>
-                        </div>
-                        <h3 class="expertise-title">Service Driven</h3>
-                    </div>
-                    <div class="card-content">
-                        <p class="expertise-description">
-                            Our team is committed to partners by offering quality driven operations. We deliver the highest quality work and ensure complete customer satisfaction by constantly improving our services.
-                        </p>
-                    </div>
-                    <div class="card-accent service-accent"></div>
-                </div>
-                
-                <!-- Safety Leaders Card -->
-                <div class="expertise-card safety-card">
-                    <div class="card-header">
-                        <div class="expertise-icon">
-                            <div class="icon-wrapper safety-icon">
-                                🛡️
-                            </div>
-                        </div>
-                        <h3 class="expertise-title">Safety Leaders</h3>
-                    </div>
-                    <div class="card-content">
-                        <p class="expertise-description">
-                            Safety is of paramount importance to us. We believe that Zero Harm is attainable and strive to build the most efficient organization. Safety leadership is critical to our Zero Harm culture. We continuously conduct specialized safety leadership development programs while all INSEE Ecocycle employees are mentored to drive our health and safety performance with passion, energy and a clear vision.
-                        </p>
-                    </div>
-                    <div class="card-accent safety-accent"></div>
-                </div>
-            </div>
+    <!-- How to Get Started Section (ตามภาพ) -->
+    <section class="how-to-get-started-section">
+      <div class="container how-to-get-started-flex">
+        <div class="how-to-get-started-img-col half-col">
+          <img src="https://siamcitycement.com/ckeditor/upload/files/1745378198__DSC3267%20(1).jpg" alt="How to Get Started" class="how-to-get-started-img" />
         </div>
+        <div class="how-to-get-started-content-col half-col">
+          <h2 class="how-to-get-started-title">HOW TO GET STARTED?</h2>
+          <p class="how-to-get-started-desc">
+            We have a team of skilled experts ready to answer your questions and help you get exactly what you need.
+          </p>
+          <div class="give-us-a-call-btn-wrapper">
+            <a href="tel:1732" class="give-us-a-call-btn">
+              Give us a call <i class="fa-solid fa-phone"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Get Started Contact Form Section -->
-    <section class="contact-form-section">
-        <div class="container">
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="contact-header">
-                        <h2 class="section-title">Get Started</h2>
-                        <p class="section-subtitle">Ready to transform your waste management approach? Let's discuss how INSEE Ecocycle can help you achieve your sustainability goals.</p>
-                    </div>
-                </div>
-                
-                <div class="contact-form-container">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-header">
-                            <h3 class="form-title">Contact Us</h3>
-                            <p class="form-subtitle">Fill out the form below and we'll get back to you soon</p>
-                        </div>
-                        
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="name" class="form-label">Name-Surname *</label>
-                                <input type="text" id="name" name="name" class="form-input" required>
-                                <span class="form-focus-line"></span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email" class="form-label">E-mail *</label>
-                                <input type="email" id="email" name="email" class="form-input" required>
-                                <span class="form-focus-line"></span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="phone" class="form-label">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" class="form-input" required>
-                                <span class="form-focus-line"></span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="country" class="form-label">Country *</label>
-                                <input type="text" id="country" name="country" class="form-input" required>
-                                <span class="form-focus-line"></span>
-                            </div>
-                            
-                            <div class="form-group full-width">
-                                <label for="hearAbout" class="form-label">How did you hear about us? *</label>
-                                <select id="hearAbout" name="hearAbout" class="form-select" required>
-                                    <option value="">Please select...</option>
-                                    <option value="facebook">Facebook</option>
-                                    <option value="google">Google/Search Engine</option>
-                                    <option value="news">News</option>
-                                    <option value="linkedin">LinkedIn</option>
-                                    <option value="referrals">Peer Referrals</option>
-                                    <option value="others">Others</option>
-                                </select>
-                                <span class="form-focus-line"></span>
-                            </div>
-                            
-                            <div class="form-group full-width">
-                                <label for="service" class="form-label">Service you may be interested in *</label>
-                                <select id="service" name="service" class="form-select" required>
-                                    <option value="">Please select...</option>
-                                    <option value="waste-management">Waste Management</option>
-                                    <option value="industrial-service">Industrial Service</option>
-                                    <option value="career">Career</option>
-                                    <option value="complain">Complain</option>
-                                    <option value="others">Others</option>
-                                </select>
-                                <span class="form-focus-line"></span>
-                            </div>
-                            
-                            <div class="form-group full-width">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Please describe your requirements or questions..."></textarea>
-                                <span class="form-focus-line"></span>
-                            </div>
-                            
-                            <div class="form-group full-width">
-                                <div class="consent-wrapper">
-                                    <label class="consent-label">
-                                        <input type="checkbox" id="consent" name="consent" class="consent-checkbox" required>
-                                        <span class="custom-checkbox">
-                                            <span class="checkmark">✓</span>
-                                        </span>
-                                        <span class="consent-text">
-                                            I consent to Insee Ecocycle Company Limited collecting, using, and sharing my personal data with relevant third parties for the purpose of contacting me and fulfilling the specified services or inquiries. I understand that my data will be handled in accordance with the company's privacy policy.
-                                        </span>
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group full-width">
-                                <button type="submit" class="submit-btn">
-                                    <span class="btn-text">Send Message</span>
-                                    <span class="btn-icon">📤</span>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+    <!-- Contact Info + Contact Form Section (SCG style) -->
+    <section class="contact-main-section">
+      <div class="container contact-main-flex">
+        <!-- Left: Contact Info (new design) -->
+        <div class="contact-info-col contact-info-green">
+          <div class="contact-office-block">
+            <div class="contact-office-title">Head Office (Bangkok)</div>
+            <div class="contact-office-company">INSEE Ecocycle Company Limited</div>
+            <div class="contact-office-address">Column Tower, 3rd, 10th, 12th fl., 199 Ratchadapisek Rd. Klongtoey, Bangkok 10110, Thailand</div>
+            <div class="contact-office-row">
+              <div class="contact-office-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="contact-office-label">Telephone :</div>
+              <div class="contact-office-value">1732 press 6</div>
             </div>
+            <div class="contact-office-row">
+              <div class="contact-office-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-office-label">Email :</div>
+              <div class="contact-office-value">inseeecocycle@siamcitycement.com</div>
+            </div>
+            <div class="contact-office-actions">
+              <a href="#" class="contact-office-btn green">DOWNLOAD MAP</a>
+              <a href="#" class="contact-office-btn outline"><i class="fa-solid fa-map-location-dot"></i> GOOGLE MAP</a>
+            </div>
+          </div>
+          <hr class="contact-office-divider" />
+          <div class="contact-office-block">
+            <div class="contact-office-title">Rayong Office</div>
+            <div class="contact-office-address">318 Makhamkoo sub-district, Nikompattana district, Rayong 21180</div>
+            <div class="contact-office-row">
+              <div class="contact-office-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-office-label">Email :</div>
+              <div class="contact-office-value">inseeecocycle@siamcitycement.com</div>
+            </div>
+            <div class="contact-office-actions">
+              <a href="#" class="contact-office-btn green">DOWNLOAD MAP</a>
+              <a href="#" class="contact-office-btn outline"><i class="fa-solid fa-map-location-dot"></i> GOOGLE MAP</a>
+            </div>
+          </div>
         </div>
+        <!-- Right: Contact Form (restore previous version) -->
+        <div class="contact-form-col">
+          <form class="contact-form-box">
+            <h3 class="contact-form-title"><i class="fa-solid fa-clipboard-list"></i> Get Started</h3>
+            <div class="contact-form-row">
+              <div class="contact-form-group">
+                <label for="name" class="form-label">Name-Surname *</label>
+                <input type="text" id="name" name="name" class="form-input" required>
+              </div>
+              <div class="contact-form-group">
+                <label for="email" class="form-label">E-mail *</label>
+                <input type="email" id="email" name="email" class="form-input" required>
+              </div>
+            </div>
+            <div class="contact-form-row">
+              <div class="contact-form-group">
+                <label for="phone" class="form-label">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" class="form-input" required>
+              </div>
+              <div class="contact-form-group">
+                <label for="country" class="form-label">Country *</label>
+                <input type="text" id="country" name="country" class="form-input" required>
+              </div>
+            </div>
+            <div class="contact-form-group">
+              <label for="hearAbout" class="form-label">How did you hear about us?</label>
+              <select id="hearAbout" name="hearAbout" class="form-select">
+                <option value="">Please select...</option>
+                <option value="facebook">Facebook</option>
+                <option value="google">Google/Search Engine</option>
+                <option value="news">News</option>
+                <option value="linkedin">LinkedIn</option>
+                <option value="referrals">Peer Referrals</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+            <div class="contact-form-group">
+              <label for="service" class="form-label">Service you may be interested in *</label>
+              <select id="service" name="service" class="form-select" required>
+                <option value="">Please select...</option>
+                <option value="general">General Enquiries</option>
+                <option value="waste-management">Waste management service</option>
+                <option value="industrial-service">Industrial service</option>
+                <option value="career">Career</option>
+                <option value="suggestion">Suggestion</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+            <div class="contact-form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Please describe your requirements or questions..."></textarea>
+            </div>
+            <div class="contact-form-group consent">
+              <label>
+                <input type="checkbox" id="consent" name="consent" class="consent-checkbox" required>
+                <span class="custom-checkbox">
+                  <span class="checkmark">✓</span>
+                </span>
+                <span class="consent-text">
+                  I have thoroughly read and agreed with <a href="https://www.siamcitycement.com/thailand/en/policy" target="_blank">Privacy Policy</a>, and I hereby grant my consent to SCCC Group Companies accordingly.<br>
+                  If you would like to gain access to personal data that SCCC Group Companies has about you, please complete the <a href="https://www.siamcitycement.com/thailand/en/policy" target="_blank">Data Subject Request Form</a>.
+                </span>
+              </label>
+            </div>
+            <button type="submit" class="contact-form-submit green"><span class="btn-text">Send Message</span> <span class="btn-icon">📤</span></button>
+          </form>
+        </div>
+      </div>
     </section>
+
+    <!-- Back to top button -->
+    <div class="wg-link">
+        <a class="link backtop" href="#" id="backtop">
+            <span>↑</span>
+            TOP
+        </a>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -427,8 +472,84 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="copyright">© 2023 INSEE Ecocycle Company Limited. All rights reserved.</p>
+            <p class="copyright"> 2023 INSEE Ecocycle Company Limited. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      // Array ของ path รูป
+      const heroBackgrounds = [
+        'background/main1.jpg',
+        'background/main2.jpg',
+        'background/main3.png'
+      ];
+
+      // Init Swiper
+      const heroSwiper = new Swiper('.hero-banner', {
+        loop: true,
+        pagination: { el: '.swiper-pagination', type: 'progressbar' },
+        autoplay: { delay: 5000 },
+        on: {
+          slideChange: function () {
+            // คำนวณ index จริง (เพราะ loop)
+            let realIndex = this.realIndex;
+            document.querySelector('.hero').style.backgroundImage = `url('${heroBackgrounds[realIndex]}')`;
+            // จัดตำแหน่ง overlay
+            const overlay = document.querySelector('.hero-overlay-content');
+            overlay.classList.remove('left', 'right');
+            if (realIndex === 0) {
+              overlay.classList.add('right');
+            } else if (realIndex === 1) {
+              overlay.classList.add('left');
+            }
+            // ถ้า realIndex === 2 (main3.png) ไม่ต้องใส่ class ใดๆ (center)
+          },
+          // ตั้งค่าเริ่มต้น
+          init: function () {
+            document.querySelector('.hero').style.backgroundImage = `url('${heroBackgrounds[0]}')`;
+            const overlay = document.querySelector('.hero-overlay-content');
+            overlay.classList.remove('left', 'right');
+            overlay.classList.add('right');
+          }
+        }
+      });
+    </script>
+    <script>
+        const backtopButton = document.getElementById('backtop');
+
+        // Show/hide button on scroll
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+                backtopButton.classList.add('show');
+            } else {
+                backtopButton.classList.remove('show');
+            }
+        });
+
+        // Scroll to top on click
+        backtopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".hero-banner", {
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          type: "progressbar",
+        },
+      });
+    </script>
 </body>
 </html>

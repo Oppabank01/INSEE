@@ -401,4 +401,99 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Modal for map
+    const openMapModalBtn = document.getElementById('openMapModal');
+    const mapModal = document.getElementById('mapModal');
+    const closeMapModalBtn = document.getElementById('closeMapModal');
+
+    if (openMapModalBtn && mapModal && closeMapModalBtn) {
+      openMapModalBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        mapModal.classList.add('show');
+      });
+      closeMapModalBtn.addEventListener('click', function() {
+        mapModal.classList.remove('show');
+      });
+      window.addEventListener('click', function(event) {
+        if (event.target === mapModal) {
+          mapModal.classList.remove('show');
+        }
+      });
+    }
+
+    // Modal for Rayong map
+    const openMapModalRayongBtn = document.getElementById('openMapModalRayong');
+    const mapModalRayong = document.getElementById('mapModalRayong');
+    const closeMapModalRayongBtn = document.getElementById('closeMapModalRayong');
+
+    if (openMapModalRayongBtn && mapModalRayong && closeMapModalRayongBtn) {
+      openMapModalRayongBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        mapModalRayong.classList.add('show');
+      });
+      closeMapModalRayongBtn.addEventListener('click', function() {
+        mapModalRayong.classList.remove('show');
+      });
+      window.addEventListener('click', function(event) {
+        if (event.target === mapModalRayong) {
+          mapModalRayong.classList.remove('show');
+        }
+      });
+    }
+
+    // Modal for Chonburi map
+    const openMapModalChonburiBtn = document.getElementById('openMapModalChonburi');
+    const mapModalChonburi = document.getElementById('mapModalChonburi');
+    const closeMapModalChonburiBtn = document.getElementById('closeMapModalChonburi');
+    if (openMapModalChonburiBtn && mapModalChonburi && closeMapModalChonburiBtn) {
+      openMapModalChonburiBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        mapModalChonburi.classList.add('show');
+      });
+      closeMapModalChonburiBtn.addEventListener('click', function() {
+        mapModalChonburi.classList.remove('show');
+      });
+      window.addEventListener('click', function(event) {
+        if (event.target === mapModalChonburi) {
+          mapModalChonburi.classList.remove('show');
+        }
+      });
+    }
+    // Modal for Saraburi map
+    const openMapModalSaraburiBtn = document.getElementById('openMapModalSaraburi');
+    const mapModalSaraburi = document.getElementById('mapModalSaraburi');
+    const closeMapModalSaraburiBtn = document.getElementById('closeMapModalSaraburi');
+    if (openMapModalSaraburiBtn && mapModalSaraburi && closeMapModalSaraburiBtn) {
+      openMapModalSaraburiBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        mapModalSaraburi.classList.add('show');
+      });
+      closeMapModalSaraburiBtn.addEventListener('click', function() {
+        mapModalSaraburi.classList.remove('show');
+      });
+      window.addEventListener('click', function(event) {
+        if (event.target === mapModalSaraburi) {
+          mapModalSaraburi.classList.remove('show');
+        }
+      });
+    }
+    // Modal for Songkhla map
+    const openMapModalSongkhlaBtn = document.getElementById('openMapModalSongkhla');
+    const mapModalSongkhla = document.getElementById('mapModalSongkhla');
+    const closeMapModalSongkhlaBtn = document.getElementById('closeMapModalSongkhla');
+    if (openMapModalSongkhlaBtn && mapModalSongkhla && closeMapModalSongkhlaBtn) {
+      openMapModalSongkhlaBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        mapModalSongkhla.classList.add('show');
+      });
+      closeMapModalSongkhlaBtn.addEventListener('click', function() {
+        mapModalSongkhla.classList.remove('show');
+      });
+      window.addEventListener('click', function(event) {
+        if (event.target === mapModalSongkhla) {
+          mapModalSongkhla.classList.remove('show');
+        }
+      });
+    }
+
 });

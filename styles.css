@@ -36,6 +36,7 @@ body {
     background-color: var(--insee-white);
     overflow-x: hidden;
     scroll-behavior: smooth;
+    transition: padding-top 0.3s ease;
 }
 
 .container {
@@ -60,9 +61,12 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title {
     transition: all 0.3s ease;
 }
 
-.header.scrolled {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-    transform: translateY(-36px); /* Hide the top bar when scrolled */
+.header--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* อาจจะเพิ่มเงาให้เข้มขึ้นเล็กน้อย เพื่อให้ดูเหมือนลอยอยู่ */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
 .navbar {
@@ -245,19 +249,28 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title {
 }
 
 .hero {
-    padding: 0;
-    margin-top: 80px;
-    height: calc(50);
-    min-height: 400px;
-    background: #222;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
+  
+  position: relative; /* สำคัญมาก สำหรับเป็นกรอบให้ hero-content-container */
+  width: 100%;
+  height: 100vh; /* ทำให้ Hero สูงเต็มหน้าจอ */
+  min-height: 600px; /* ความสูงขั้นต่ำสำหรับจอมือถือ */
+  background-color: #000; /* สีพื้นหลังเผื่อกรณีรูปโหลดไม่ขึ้น */
+  overflow: hidden; /* ป้องกัน element ลูกที่เกินขอบแสดงออกมา */
+  padding: 0; /* เราไม่ต้องการ padding ใน container หลัก */
+  margin: 0;  /* เราไม่ต้องการ margin ใน container หลัก */
+}
+
+/* leave space equal to header height so hero is not hidden */
+.header + .hero {
+    margin-top: var(--header-height);
+}
+
+:root {
+    --header-height: 120px; /* approx. total height of top-bar + navbar */
 }
 
 .hero-overlay-content {
-    position: absolute;
+    position: sticky ;
     top: 50%;
     left: 50%;
     z-index: 10;
@@ -1004,9 +1017,7 @@ section:nth-of-type(odd) {
     .nav-toggle {
         display: block;
     }
-    .hero {
-        margin-top: 125px; /* Adjust for mobile header height */
-    }
+   
     body {
         line-height: 1.65;
     }
@@ -1029,10 +1040,7 @@ section:nth-of-type(odd) {
     .search-btn {
         padding-right: 10px;
     }
-    .hero {
-        margin-top: 120px; /* Adjust for smaller mobile header height */
-        padding: 60px 0;
-    }
+   
     .hero-title {
         font-size: 2.2rem;
     }
@@ -3653,15 +3661,15 @@ section:nth-of-type(odd) {
     min-height: 400px;
     overflow: hidden;
     background-color: #000;
-    margin-top: 80px;
+
 }
 
 .hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.8s ease;
-    max-height: 100vh;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+  max-height: 100vh;
 }
 
 .swiper-slide:hover .hero-image {
@@ -3671,19 +3679,19 @@ section:nth-of-type(odd) {
 
 
 .hero-content-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #fff;
-    padding: 0 20px;
-    overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  padding: 0 20px;
 }
+
 
 .hero-content {
     max-width: 800px;

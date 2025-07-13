@@ -11,12 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (header) {
         headerHeight = header.offsetHeight;
     }
-
-    // --- ส่วนของฟังก์ชัน (Functions) ---
-
-
-
-    // ฟังก์ชันสำหรับปุ่ม Back to Top
     function handleBackToTopButton() {
         if (backtopButton) { // ทำงานต่อเมื่อมีปุ่ม
             if (window.scrollY > 300) {
@@ -27,16 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
-    
-    // --- ส่วนของการทำงานตอน Scroll (Event Listener หลัก) ---
-    // *** เราจะรวมทุกอย่างที่ทำงานตอน scroll มาไว้ในนี้ที่เดียว ***
     window.addEventListener('scroll', () => {
         handleBackToTopButton();
     });
-
-
-    // --- ส่วนที่ทำงานตอน Click หรือโหลดหน้าเสร็จ (ทำงานแค่ครั้งเดียว) ---
 
     // Hero Section Animation
     animatedElements.forEach((element, index) => {
@@ -73,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'card-title-other': 'Explore Our Solutions',
             'card-btn-learn-more': 'Learn More',
             'wm-label-green': 'WASTE MANAGEMENT',
-            'wm-title': 'Waste Analysis and Laboratory Services',
+            'wm-title': 'Sustainable Integrated Waste Management Service​',
             'industrial-desc': 'INSEE Ecocycle delivers expert waste management solutions for a wide range of industrial sectors, using co-processing technology to transform waste into alternative fuels and raw materials for cement kilns. This process replaces fossil fuels like coal, lowering overall carbon emissions. Co-processing safely treats waste at high temperatures, leaving no residual ash and achieving zero waste to landfill. To address growing waste challenges, INSEE Ecocycle has also pioneered energy recovery from Municipal Solid Waste (MSW), including mining dumpsites for combustible materials such as plastic to produce Refuse-Derived Fuel (RDF). This approach recovers valuable resources, extends landfill lifespans, and helps prevent plastic waste from leaking into oceans and water sources.',
             'industrial-services-label': 'INDUSTRIAL SERVICES',
             'industrial-services-title': 'Specialized Industrial Services Across the Project Lifecycle',
@@ -146,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'how-to-get-started-title': 'HOW TO GET STARTED?',
             'how-to-get-started-desc': 'We have a team of skilled experts ready to answer your questions and help you get exactly what you need.',
             'give-us-a-call-btn': 'Give us a call',
-            'contact-section-title': 'Get in Touch',
+            'contact-section-title': 'Contact Us',
             'contact-section-subtitle': 'We\'re here to help with your sustainable waste management needs',
             'contact-office-title-head': 'Head Office (Bangkok)',
             'contact-office-title-rayong': 'Rayong Office',
@@ -495,5 +482,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
+
+    // === Change hero text color if main1.png is active ===
+    (function() {
+      // Map realIndex ไปที่ชื่อไฟล์
+      var heroFilenames = ['main1.png', 'main2.png', 'main3.png'];
+      function updateHeroTextColor() {
+        var realIndex = window.heroSwiper ? window.heroSwiper.realIndex : 0;
+        var filename = heroFilenames[realIndex];
+        var heroTitles = document.querySelectorAll('.hero-title');
+        var heroDescs = document.querySelectorAll('.hero-description');
+        var heroContent = document.querySelector('.hero-content');
+        console.log('Active hero realIndex:', realIndex, 'filename:', filename);
+        heroTitles.forEach(function(el){ el.classList.remove('insee-green-text'); });
+        heroDescs.forEach(function(el){ el.classList.remove('insee-green-text'); });
+        if (filename === 'main1.png') {
+          heroTitles.forEach(function(el){ el.classList.add('insee-green-text'); });
+          heroDescs.forEach(function(el){ el.classList.add('insee-green-text'); });
+        }
+        // ข้อความขวาเฉพาะ main2.png
+        if (heroContent) {
+          heroContent.classList.remove('right-align');
+          if (filename === 'main2.png') {
+            heroContent.classList.add('right-align');
+          }
+        }
+      }
+      function bindSwiperEvent() {
+        if (window.heroSwiper && window.heroSwiper.on) {
+          window.heroSwiper.on('slideChange', updateHeroTextColor);
+          window.heroSwiper.on('init', updateHeroTextColor);
+          updateHeroTextColor();
+        } else {
+          setTimeout(bindSwiperEvent, 300);
+        }
+      }
+      window.addEventListener('load', bindSwiperEvent);
+    })();
 
 });

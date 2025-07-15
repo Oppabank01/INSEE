@@ -47,8 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {
             'company-name': 'INSEE Ecocycle Company Limited',
             'hero-title': 'INSEE Ecocycle Sustainable Waste Management and Innovative Industrial Services',
+            'hero-title-main2': 'INSEE Ecocycle Sustainable Waste Management and<br>Innovative Industrial Services',
             'hero-description': 'We provide sustainable waste management solutions to help achieve your sustainability goals, along with innovative industrial services that support every stage of a project’s lifecycle from commissioning and operation to decommissioning.',
             'explore-btn': 'Explore More About Us',
+            'read-more': 'READ MORE',
+            'hero-title-mobile-main1': 'INSEE Ecocycle<br>Sustainable Solutions',
+            'hero-desc-mobile-main1': 'We are a green business offering sustainable solutions to a range of industries in various sectors. Recovering energy and resources from waste materials.',
+            'hero-title-mobile-main2': 'WASTE<br>MANAGEMENT',
+            'hero-desc-mobile-main2': 'We provide sustainable waste solutions through true collaborative partnerships, offering a wide range of waste management services, including consulting, waste analysis, handling, logistics, processing, and final treatment in our cement kilns.',
+            'hero-title-mobile-main3': 'INDUSTRIAL<br>SERVICES',
+            'hero-desc-mobile-main3': 'We offer specialist industrial services specifically for the oil & gas exploration, petrochemical and power generation industry, both domestically and internationally.',
             'services-solutions-label': 'SERVICES & SOLUTIONS',
             'services-solutions-title': 'Explore our Services & Solutions',
             'services-solutions-desc': 'We offer sustainable waste management solutions and innovative industrial services to support your sustainability goals and operational efficiency. Our solutions ensure the safe and assured destruction of waste, help industrial clients meet regulatory compliance, and effectively manage complex waste streams. From responsible waste treatment to specialized industrial services, we support every stage of a project’s lifecycle, including commissioning, operation, and decommissioning. Throughout each phase, we deliver safety, reliability, and strong environmental performance.',
@@ -183,8 +191,16 @@ document.addEventListener('DOMContentLoaded', () => {
         cn: {
             'company-name': '鹰牌环境服务公司',
             'hero-title': 'INSEE Ecocycle（鹰牌环境）可持续的废弃物管理及创新的工业服务',
+            'hero-title-main2': 'INSEE Ecocycle（鹰牌环境）可持续的废弃物管理及<br>创新的工业服务',
             'hero-description': '我们提供可持续废弃物管理的解决方案，以助力您实现可持续发展目标，并提供创新的工业服务，全程支持项目生命周期的各个阶段----从调式，运营直至退役的各个环节。',
             'explore-btn': 'Explore More About Us',
+            'read-more': '阅读更多',
+            'hero-title-mobile-main1': '鹰牌环境<br>可持续解决方案',
+            'hero-desc-mobile-main1': '我们是一家绿色企业，为各行各业提供可持续的解决方案。从废料中回收能源和资源。',
+            'hero-title-mobile-main2': '废弃物<br>管理',
+            'hero-desc-mobile-main2': '我们通过真正的合作伙伴关系提供可持续的废弃物解决方案，提供广泛的废弃物管理服务，包括咨询、废弃物分析、处理、物流、加工和水泥窑的最终处理。',
+            'hero-title-mobile-main3': '工业<br>服务',
+            'hero-desc-mobile-main3': '我们为国内外石油天然气勘探、石化和发电行业提供专业的工业服务。',
             'services-solutions-label': '服务与解决方案',
             'services-solutions-title': '探索我们的服务与解决方案',
             'services-solutions-desc': '我们提供可持续的废弃物解决方案和创新的工业服务，旨在助力贵司实现可持续发展目标并提升运营效率。我们的解决方案能确保废弃物得到安全可靠的销毁，协助工业客户符合各项法规的要求，并有有效地管理复杂的废弃物。从负责任的废弃物处理到专业的工业服务，我们为项目生命周期的每个阶段提供支持，包括调式，运营和退役。在每个阶段，我们都致力于实现安全性，可靠性以及优异环境效率。',
@@ -317,6 +333,37 @@ document.addEventListener('DOMContentLoaded', () => {
             'section-description-3': '除了废弃物管理，我们还为石油天然气和石化行业提供创新的工业服务。我们致力于在各个阶段最大程度地提高运营的安全性和效率，同时最大限度的减少对环境的影响，全力支持客户实现可持续发展目标。'
         }
     };
+    
+    function getCurrentLang() {
+        return localStorage.getItem('selectedLanguage') || 'en';
+    }
+
+    const heroImagePaths = {
+        desktop: {
+            en: [
+                'background/main1-com.jpg',
+                'background/main2-com.jpg',
+                'background/main3-com.jpg'
+            ],
+            cn: [
+                'background/main1-com-cn.jpg',
+                'background/main2-com-cn.jpg',
+                'background/main3-com-cn.jpg'
+            ]
+        },
+        mobile: {
+            en: [
+                'background/main1-mobile.jpg',
+                'background/main2-mobile.jpg',
+                'background/main3-mobile.jpg'
+            ],
+            cn: [
+                'background/main1-mobile-cn.jpg',
+                'background/main2-mobile-cm.jpg',
+                'background/main3-mobile-cn.jpg'
+            ]
+        }
+    };
 
     function updateContent(lang) {
         localStorage.setItem('selectedLanguage', lang);
@@ -354,6 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+        updateHeroSection(); // Call hero update after language change
     }
 
     const savedLang = localStorage.getItem('selectedLanguage') || 'en';
@@ -364,7 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateContent(lang);
         });
     });
-    updateContent(savedLang);
+    // updateContent(savedLang); // This will be called by updateHeroSection on init
 
     // Smooth scrolling for navigation links
     document.addEventListener('click', (e) => {
@@ -483,41 +531,63 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // === Change hero text color if main1.png is active ===
-    (function() {
-      // Map realIndex ไปที่ชื่อไฟล์
-      var heroFilenames = ['main1.png', 'main2.png', 'main3.png'];
-      function updateHeroTextColor() {
-        var realIndex = window.heroSwiper ? window.heroSwiper.realIndex : 0;
-        var filename = heroFilenames[realIndex];
-        var heroTitles = document.querySelectorAll('.hero-title');
-        var heroDescs = document.querySelectorAll('.hero-description');
-        var heroContent = document.querySelector('.hero-content');
-        console.log('Active hero realIndex:', realIndex, 'filename:', filename);
-        heroTitles.forEach(function(el){ el.classList.remove('insee-green-text'); });
-        heroDescs.forEach(function(el){ el.classList.remove('insee-green-text'); });
-        if (filename === 'main1.png') {
-          heroTitles.forEach(function(el){ el.classList.add('insee-green-text'); });
-          heroDescs.forEach(function(el){ el.classList.add('insee-green-text'); });
-        }
-        // ข้อความขวาเฉพาะ main2.png
-        if (heroContent) {
-          heroContent.classList.remove('right-align');
-          if (filename === 'main2.png') {
-            heroContent.classList.add('right-align');
-          }
-        }
-      }
-      function bindSwiperEvent() {
-        if (window.heroSwiper && window.heroSwiper.on) {
-          window.heroSwiper.on('slideChange', updateHeroTextColor);
-          window.heroSwiper.on('init', updateHeroTextColor);
-          updateHeroTextColor();
-        } else {
-          setTimeout(bindSwiperEvent, 300);
-        }
-      }
-      window.addEventListener('load', bindSwiperEvent);
-    })();
+    // === Hero Section Update Logic ===
+    function updateHeroSection() {
+        const lang = getCurrentLang();
+        const activeIndex = window.heroSwiper ? window.heroSwiper.realIndex : 0;
+        const isMobile = window.innerWidth <= 768;
+        const isTablet = window.innerWidth > 768 && window.innerWidth <= 900;
 
+        const deviceType = isMobile ? 'mobile' : 'desktop';
+        const imagePaths = heroImagePaths[deviceType][lang];
+
+        // Update images
+        imagePaths.forEach((path, index) => {
+            const imgElement = document.getElementById(`hero-image-${index + 1}`);
+            if (imgElement && imgElement.src !== path) {
+                imgElement.src = path;
+            }
+        });
+
+        // Update button text based on device
+        const buttonKey = isMobile ? 'read-more' : 'explore-btn';
+        const button = document.querySelector('.hero-explore-btn');
+        if (button) {
+            const buttonTextContainer = button.querySelector('span:not(.hero-explore-icon)');
+            if (buttonTextContainer && translations[lang] && translations[lang][buttonKey]) {
+                buttonTextContainer.innerHTML = translations[lang][buttonKey];
+            }
+        }
+
+        // Update content alignment based on slide
+        const heroContent = document.querySelector('.hero-content');
+        if (heroContent) {
+            heroContent.classList.remove('right-align', 'center-align', 'first-slide', 'third-slide');
+            if (activeIndex === 0) { // Slide 1
+                heroContent.classList.add('first-slide');
+            } else if (activeIndex === 1) { // Slide 2
+                heroContent.classList.add('center-align');
+            } else if (activeIndex === 2) { // Slide 3
+                heroContent.classList.add('third-slide');
+            }
+        }
+    }
+
+    function initSwiperAndEvents() {
+        if (window.heroSwiper && window.heroSwiper.on) {
+            updateContent(savedLang); // Initial content update
+            window.heroSwiper.on('slideChange', updateHeroSection);
+            window.heroSwiper.on('init', updateHeroSection);
+        } else {
+            setTimeout(initSwiperAndEvents, 100);
+        }
+    }
+
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(updateHeroSection, 250);
+    });
+
+    initSwiperAndEvents();
 });

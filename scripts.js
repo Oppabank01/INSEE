@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'hero-title': 'INSEE Ecocycle Sustainable Waste Management and Innovative Industrial Services',
             'hero-title-main2': 'INSEE Ecocycle Sustainable Waste Management and<br>Innovative Industrial Services',
             'hero-description': 'We provide sustainable waste management solutions to help achieve your sustainability goals, along with innovative industrial services that support every stage of a project’s lifecycle from commissioning and operation to decommissioning.',
-            'explore-btn': 'Explore More About Us',
+            'explore-btn': 'READ MORE',
             'read-more': 'READ MORE',
             'hero-title-mobile-main1': 'INSEE Ecocycle<br>Sustainable Solutions',
             'hero-desc-mobile-main1': 'We are a green business offering sustainable solutions to a range of industries in various sectors. Recovering energy and resources from waste materials.',
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'hero-title': 'INSEE Ecocycle（鹰牌环境）可持续的废弃物管理及创新的工业服务',
             'hero-title-main2': 'INSEE Ecocycle（鹰牌环境）可持续的废弃物管理及<br>创新的工业服务',
             'hero-description': '我们提供可持续废弃物管理的解决方案，以助力您实现可持续发展目标，并提供创新的工业服务，全程支持项目生命周期的各个阶段----从调式，运营直至退役的各个环节。',
-            'explore-btn': 'Explore More About Us',
+            'explore-btn': '阅读更多',
             'read-more': '阅读更多',
             'hero-title-mobile-main1': '鹰牌环境<br>可持续解决方案',
             'hero-desc-mobile-main1': '我们是一家绿色企业，为各行各业提供可持续的解决方案。从废料中回收能源和资源。',
@@ -548,16 +548,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 imgElement.src = path;
             }
         });
-
-        // Update button text based on device
-        const buttonKey = isMobile ? 'read-more' : 'explore-btn';
-        const button = document.querySelector('.hero-explore-btn');
-        if (button) {
-            const buttonTextContainer = button.querySelector('span:not(.hero-explore-icon)');
-            if (buttonTextContainer && translations[lang] && translations[lang][buttonKey]) {
-                buttonTextContainer.innerHTML = translations[lang][buttonKey];
-            }
-        }
 
         // Update content alignment based on slide
         const heroContent = document.querySelector('.hero-content');

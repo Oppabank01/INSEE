@@ -438,11 +438,12 @@
           </div>
           <!-- Right: Contact Form -->
           <div class="contact-form-col">
-            <form class="contact-form-box">
+            <form class="contact-form-box" id="contactForm">
               <div class="contact-form-header">
                 <h3 class="contact-form-title" data-translate="contact-form-title"><i class="fa-solid fa-clipboard-list"></i> Get Started</h3>
                 <p class="contact-form-desc" data-translate="contact-form-desc">Fill out the form below and we'll get back to you shortly</p>
               </div>
+              
               <div class="contact-form-row">
                 <div class="contact-form-group">
                   <label for="name" class="form-label" data-translate="form-label-name">Name-Surname *</label>
@@ -559,8 +560,17 @@
         </div>
     </footer>
 
+
     <script src="scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- EmailJS CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      // Initialize EmailJS
+      (function() {
+        emailjs.init("JhGdiuNKOcKZz3lsT");
+      })();
+    </script>
     <script>
       // Initialize Swiper
       window.heroSwiper = new Swiper('.hero-banner', {

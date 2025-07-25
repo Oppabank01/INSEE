@@ -137,9 +137,20 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .service-title, .service-ca
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 8px 12px;
     gap: 8px;
     color: #fff;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.lang-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.lang-toggle-btn:active {
+    transform: translateY(0);
 }
 
 .lang-toggle-btn span {
@@ -175,13 +186,13 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .service-title, .service-ca
     padding: 8px 0;
 }
 
-.lang-dropdown:hover .lang-menu {
+.lang-menu.show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
 
-.lang-dropdown:hover .dropdown-arrow {
+.lang-dropdown.active .dropdown-arrow {
     transform: rotate(180deg);
 }
 
@@ -3119,7 +3130,7 @@ section:nth-of-type(odd) {
   text-decoration: underline;
 }
 .contact-form-submit {
-  background: #E52421;
+  background: #00A654;
   color: #fff;
   font-size: 1.1rem;
   font-weight: 700;
@@ -3139,7 +3150,7 @@ section:nth-of-type(odd) {
   font-size: 1.1em;
 }
 .contact-form-submit:hover {
-  background: #b71c1c;
+  background: #008844;
 }
 @media (max-width: 1100px) {
   .contact-main-flex {
@@ -3715,7 +3726,7 @@ section:nth-of-type(odd) {
   text-decoration: underline;
 }
 .contact-form-submit {
-  background: #E52421;
+  background: #00A654;
   color: #fff;
   font-size: 1.1rem;
   font-weight: 700;
@@ -3735,7 +3746,7 @@ section:nth-of-type(odd) {
   font-size: 1.1em;
 }
 .contact-form-submit:hover {
-  background: #b71c1c;
+  background: #008844;
 }
 @media (max-width: 1100px) {
   .contact-main-flex {
@@ -3984,7 +3995,7 @@ section:nth-of-type(odd) {
   text-decoration: underline;
 }
 .contact-form-submit {
-  background: #E52421;
+  background: #00A654;
   color: #fff;
   font-size: 1.1rem;
   font-weight: 700;
@@ -4004,7 +4015,7 @@ section:nth-of-type(odd) {
   font-size: 1.1em;
 }
 .contact-form-submit:hover {
-  background: #b71c1c;
+  background: #008844;
 }
 /* iPad/Tablet Contact responsive styles - Keep Original Design */
 @media (max-width: 1100px) and (min-width: 600px) {
@@ -5979,6 +5990,22 @@ h3 {
 }
 
 .modal-close:hover,
+
+/* Additional contact form submit button styling */
+.contact-form-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.contact-form-submit .fa-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 .modal-close:focus {
   color: #bbb;
   text-decoration: none;

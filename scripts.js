@@ -35,6 +35,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Language Dropdown Toggle
+    const langDropdown = document.querySelector('.lang-dropdown');
+    const langToggleBtn = document.querySelector('.lang-toggle-btn');
+    const langMenu = document.querySelector('.lang-menu');
+    
+    if (langToggleBtn && langMenu) {
+        langToggleBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Toggle dropdown
+            langMenu.classList.toggle('show');
+            langDropdown.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!langDropdown.contains(e.target)) {
+                langMenu.classList.remove('show');
+                langDropdown.classList.remove('active');
+            }
+        });
+        
+        // Close dropdown when selecting a language
+        langMenu.addEventListener('click', function(e) {
+            if (e.target.closest('a')) {
+                langMenu.classList.remove('show');
+                langDropdown.classList.remove('active');
+            }
+        });
+    }
+
     // Language Switching
     const translations = {
         en: {
@@ -466,4 +498,112 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     initSwiperAndEvents();
+
+    // === Contact Form EmailJS Functionality ===
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                country: document.getElementById('country').value.trim(),
+                hearAbout: document.getElementById('hearAbout').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value.trim(),
+                consent: document.getElementById('consent').checked
+            };
+            
+            // Validate required fields
+            if (!formData.name || !formData.email || !formData.phone || !formData.country || !formData.service) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Validate consent
+            if (!formData.consent) {
+                alert('Please accept the privacy policy to continue.');
+                document.getElementById('consent').focus();
+                return;
+            }
+            
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formData.email)) {
+                alert('Please enter a valid email address.');
+                document.getElementById('email').focus();
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = contactForm.querySelector('.contact-form-submit');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Prepare template parameters for EmailJS
+            const templateParams = {
+                from_name: formData.name,
+                from_email: formData.email,
+                phone: formData.phone,
+                country: formData.country,
+                hear_about: formData.hearAbout || 'Not specified',
+                service_interest: formData.service,
+                message: formData.message || 'No message provided',
+                time: new Date().toLocaleString('th-TH', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                }),
+                to_email: 'inseeecocycle@siamcitycement.com'
+            };
+            
+            // Check if EmailJS is available
+            if (typeof emailjs === 'undefined') {
+                alert('Email service is not available. Please refresh the page and try again.');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                return;
+            }
+            
+            // Send email using EmailJS
+            // ถ้าสร้าง template ใหม่ ให้เปลี่ยน template_wyi3eun เป็น template ID ใหม่
+            emailjs.send('service_1t5pspf', 'template_wyi3eun', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Show success alert
+                    alert('ส่งสำเร็จแล้ว! (Message sent successfully!)');
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    
+                    // Show error message with more details
+                    let errorMessage = 'Sorry, there was an error sending your message. Please try again later.';
+                    
+                    if (error.text) {
+                        errorMessage += '\n\nError details: ' + error.text;
+                    }
+                    
+                    alert(errorMessage);
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
 });
